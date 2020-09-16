@@ -1,1 +1,21 @@
-<p>lista-participantes works!</p>
+<div class="container content mt-3">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form>
+                <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nombre y apellido de participante" #nya>
+                </div>
+                <div class="form-group">
+                <input type="text" class="form-control" placeholder="Ciudad" #ciu>
+                </div>
+                <div class="form-group">
+                <input type="text" class="form-control" placeholder="Lenguaje que presenta" #leng>
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="guardar(nya.value,ciu.value,leng.value)">Guardar</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <app-participantes *ngFor="let p of participante" [participante]="p"></app-participantes>
+    </div>
+</div>
