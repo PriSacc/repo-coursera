@@ -18,7 +18,8 @@ exports.bicicleta_create_post = function(req, res) { //envio de formulario
 
 exports.bicicleta_delete_post = function(req, res) {
     Bicicletas.removeById(req.body.id);
-    res.redirect('/bicicletas')
+
+    res.redirect('/bicicletas');
 }
 
 exports.bicicleta_update_get = function(req, res) {
