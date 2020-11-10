@@ -5,12 +5,23 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Marcar el mapa
-L.marker([-32.9512, -60.6323]).addTo(map)
-    .bindPopup('A pretty popup.<br> Don\'t you think?.')
-    .openPopup();
-L.marker([-32.9553, -60.66]).addTo(map)
-    .bindPopup('Popup something.')
-    .openPopup();
-L.marker([-32.9587, -60.6376]).addTo(map)
-    .bindPopup('Say some.')
-    .openPopup();
+// L.marker([-32.9512, -60.6323]).addTo(map)
+//     .bindPopup('A pretty popup.<br> Don\'t you think?.')
+//     .openPopup();
+// L.marker([-32.9553, -60.66]).addTo(map)
+//     .bindPopup('Popup something.')
+//     .openPopup();
+// L.marker([-32.9587, -60.6376]).addTo(map)
+//     .bindPopup('Say some.')
+//     .openPopup();
+
+$.ajax({
+    dataType: "json",
+    url: "api/bicicletas",
+    success: function(result) {
+        console.log(result);
+        result.bicicletas.forEach(function(bici) {
+            L.marker(bici.ubicacion, {title: bici.id}).addTo(map);
+        });
+    }
+})
