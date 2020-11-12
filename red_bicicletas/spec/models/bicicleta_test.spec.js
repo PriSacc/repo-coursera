@@ -37,7 +37,7 @@ describe('Bicicleta.findById()', () => {
 });
 
 describe('Bicicleta.removeById()', () => {
-    it('debe devolver la bici con id 1', () => {
+    it('debe eliminar la bici con id 1', () => {
         expect(Bicicleta.allBicis.length).toBe(0);
 
         var aBici = new Bicicleta(1,'rosa','urbana');
