@@ -22,8 +22,11 @@ describe('Testeando Usuarios', function() {
             if (err) console.log(err);
             Usuario.deleteMany({}, function(err,success) {
                 if(err) console.log(err);
-                mongoose.disconnect();
-                done();
+                Bicicleta.deleteMany({}, function(err, success) {
+                    if (err) console.log(err);
+                    mongoose.disconnect();
+                    done();
+                })
             });
         });
     });

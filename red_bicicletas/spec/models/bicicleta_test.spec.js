@@ -69,7 +69,7 @@ describe('Testeando bicicletas', function() {
                     if (err) console.log(err);
 
                     var aBici2 = new Bicicleta({code: 2, color: 'azul', modelo: 'urbana'});
-                    Bicicleta.add(aBici, function(err, newBici) {
+                    Bicicleta.add(aBici2, function(err, newBici) {
                         if (err) console.log(err);
                         Bicicleta.findByCode(1, function(err, targetBici) {
                             expect(targetBici.code).toBe(aBici.code);
