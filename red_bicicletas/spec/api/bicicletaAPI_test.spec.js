@@ -57,6 +57,23 @@ describe('Bicicleta API', () => {
         });
     });
 
+    describe('DELETE Bicicleta /delete', ()=>{
+        it('Status 204', (done)=>{
+            var a = Bicicleta.createInstance(1, "negro", "urbana", [-32.44, -60.44]);
+            Bicicleta.add(a, function(){
+                var headers = {"Content-type" : "application/json"}
+            });
+                        
+            request.delete({
+                url: 'http://localhost:3000/api/bicicletas/delete',
+                body: '{ "code": 1}'
+            }, function(error, response, body){
+                expect(response.statusCode).toBe(204);     
+                done();
+            })            
+        });
+    });
+
     
 });
 // describe('GET BICICLETAS /', () => {
