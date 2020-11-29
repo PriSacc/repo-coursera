@@ -1,0 +1,13 @@
+body {
+    padding: 50px;
+    padding-top: 5rem;
+  }
+  
+  a {
+    color: #00B7FF;
+  }
+  
+  #main_map {
+    height: 600px;
+  }
+  
