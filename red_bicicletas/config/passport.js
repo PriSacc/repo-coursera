@@ -7,7 +7,7 @@ passport.use(new LocalStrategy(
                 Usuario.findOne({ email: email }, function (err, usuario) {
                     if (err) return done(err);
                     if (!usuario) return done(null, false, { message: 'Email no existente o incorrecto' });
-                    if (!usuario.validPassword(password)) return done(null, false, { message: 'Password incorrecto' });
+                    if (!usuario.validPassword(password)) return done(null, false, { message: 'Clave incorrecta' });
         
                     return done(null, usuario);
                 });
